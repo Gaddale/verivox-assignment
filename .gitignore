@@ -1,0 +1,8 @@
+/target/
+/.classpath
+/.idea
+/log
+.settings/
+.*iml
+verivox-assignment.iml
+
