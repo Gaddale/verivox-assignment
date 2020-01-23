@@ -8,17 +8,18 @@ import java.util.List;
 
 public class TariffPage extends BasePage {
 
-    By mehrZumTarifButton = By.xpath("(//div[@class=\"row my-4\"]/descendant::app-tariff-cta)[1]");
-    By searchResults = By.cssSelector("[class=\"row my-4\"]>div>app-tariff");
-    By tariffPrice = By.xpath("(//div[@class=\"row my-4\"]/descendant::app-tariff-price/div/div[@class=\"position-relative large mb-2\"]/strong)[1]");
-    By weitereTarifeLadenButton = By.xpath("//button[contains(text(),'weitere tarife laden')]");
-
+    private By mehrZumTarifButton = By.xpath("(//div[@class=\"row my-4\"]/descendant::app-tariff-cta)[1]");
+    private By searchResults = By.cssSelector("[class=\"row my-4\"]>div>app-tariff");
+    private By tariffPrice = By.xpath("(//div[@class=\"row my-4\"]/descendant::app-tariff-price/div/div[@class=\"position-relative large mb-2\"]/strong)[1]");
+    private By weitereTarifeLadenButton = By.xpath("//button[contains(text(),'weitere tarife laden')]");
+    private String searchResultsSting = "[class=\"row my-4\"]>div>app-tariff";
+    
     public TariffPage(WebDriver driver) {
         super(driver);
     }
 
     public WebElement getSearchResults() {
-        waitForElementToLoad(mehrZumTarifButton);
+        visibilityOfElementLocatedCss(searchResultsSting);
         return getElement(searchResults);
     }
 
@@ -43,8 +44,8 @@ public class TariffPage extends BasePage {
     }
 
     public void waitForResultsPageLoad(){
-        waitForElementToLoad(searchResults);
+        visibilityOfElementLocatedCss(searchResultsSting);
+        getSearchResults();
+        getMehrZumTarifButton();
     }
-
-
 }
