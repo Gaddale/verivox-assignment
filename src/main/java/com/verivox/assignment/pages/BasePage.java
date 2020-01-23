@@ -18,10 +18,6 @@ public abstract class BasePage {
         this.driver = driver;
     }
 
-    public WebElement getPageHeader(By locator) {
-        return getElement(locator);
-    }
-
     public WebElement getElement(By locator) {
         WebElement element = null;
         try {
@@ -42,7 +38,10 @@ public abstract class BasePage {
     public List<WebElement> elementsList(By locator) {
         return driver.findElements(locator);
     }
-
+    
+    public void visibilityOfElementLocatedCss(String css) {
+        new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
+    }
 
     protected WebElement getXpath(By locator) {
         return driver.findElement(locator);
@@ -58,6 +57,5 @@ public abstract class BasePage {
         ((JavascriptExecutor) driver)
                 .executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0,-100);", element);
     }
-
 
 }
