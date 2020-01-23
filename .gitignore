@@ -3,6 +3,5 @@
 /.idea
 /log
 .settings/
-.*iml
-verivox-assignment.iml
+*.iml
 
