@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 
 public class TariffDetailsPage extends BasePage {
 
-    By tariffPrice = By.xpath("(//div[@class='centered-content effective-price-wrapper']/div)[1]");
-    By fiveMinutenOnlineWechselnButton = By.xpath("//div[@class='summary-tariff-content flex']//a[@class='responsive-label-txt offer-page-cta']");
+    private By tariffPrice = By.xpath("(//div[@class='centered-content effective-price-wrapper']/div)[1]");
+    private By fiveMinutenOnlineWechselnButton = By.xpath("//div[@class='summary-tariff-content flex']//a[@class='responsive-label-txt offer-page-cta']");
 
     public TariffDetailsPage(WebDriver driver) {
         super(driver);
