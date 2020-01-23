@@ -7,7 +7,7 @@ public enum Configuration {
     BROWSER("BROWSER", "chrome"),
     TEST_ENV("URL", "https://www.verivox.de"),
     OS("OS","linux"),
-    IMPLICIT_WAIT("WAIT_TIME", "20");
+    IMPLICIT_WAIT("WAIT_TIME", "10");
 
     private final String value;
 
