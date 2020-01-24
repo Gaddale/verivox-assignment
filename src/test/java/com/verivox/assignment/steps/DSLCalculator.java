@@ -33,7 +33,8 @@ public class DSLCalculator {
     }
 
     @When("^he is on the DSL calculator$")
-    public void heIsOnTheDSLCalculator() {
+    public void heIsOnTheDSLCalculator() throws InterruptedException {
+        Thread.sleep(2000);
         homePage.getDSLCalculator().click();
         logger.info("Clicked on DSL Calculator");
     }
@@ -103,7 +104,7 @@ public class DSLCalculator {
             resultsCount = Integer.parseInt(tariffPage.getWeitereTarifeLadenButton().getText().split(" ")[0]);
             tariffPage.getWeitereTarifeLadenButton().click();
             tariffPage.waitForResultsPageLoad();
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             assertThat(tariffPage.getAllSearchResults().size()).isEqualTo(resultsCount + initialCount);
             initialCount = resultsCount + initialCount;
         }
