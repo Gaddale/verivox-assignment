@@ -57,5 +57,14 @@ public abstract class BasePage {
         ((JavascriptExecutor) driver)
                 .executeScript("arguments[0].scrollIntoView(true); window.scrollBy(0,-100);", element);
     }
+    
+    public void waitForElementInvisibility(WebElement ele) {
+    try {
+      WebDriverWait wait = new WebDriverWait(driver, 20);
+      wait.until(ExpectedConditions.invisibilityOf(ele));
+    } catch (Exception e) {
+      logger.info("Element Invisiblity Time out");
+    }
+  }
 
 }
