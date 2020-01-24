@@ -44,8 +44,6 @@ public class TariffPage extends BasePage {
     }
 
     public void waitForResultsPageLoad(){
-        visibilityOfElementLocatedCss(searchResultsSting);
-        getSearchResults();
-        getMehrZumTarifButton();
+       waitForElementInvisibility(getLoader());
     }
 }
